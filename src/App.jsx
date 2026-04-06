@@ -1,29 +1,20 @@
 import Navbar from "./components/navbar.jsx";
-import {navLinks} from "./constants/index.js";
+import Hero from "./components/Hero.jsx";
+import ProductViewer from "./components/ProductViewer.jsx";
+import gsap from 'gsap';
+import {ScrollTrigger, SplitText} from 'gsap/all';
+import Showcase from "./components/Showcase.jsx";
+gsap.registerPlugin(ScrollTrigger);
+
 
 const App = () => {
     return (
-        <header>
-            <nav>
-                <img src="/logo.svg" alt="logo"/>
-                <ul>
-                    {navLinks.map(({ label})=>(
-                        <li key={label}>
-                        <a href={label}>{label}</a>
-                        </li>
-                        )
-                    )}
-                </ul>
-                <div className="flex-center gap-3" >
-                    <button>
-                        <img src="/search.svg" alt="search"/>
-                    </button>
-                    <button>
-                        <img src="/cart.svg" alt="cart"/>
-                    </button>
-                </div>
-            </nav>
-        </header>
+    <main>
+        <Navbar />
+        <Hero />
+        <ProductViewer />
+        <Showcase />
+    </main>
     )
 }
 export default App
